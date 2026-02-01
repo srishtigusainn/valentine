@@ -1,12 +1,19 @@
 const sid = document.getElementById("sid");
 const message = document.getElementById("message");
 const buttons = document.querySelector(".buttons");
+const noBtn = document.getElementById("noBtn");
 
 const sadMusic = document.getElementById("sadMusic");
 const happyMusic = document.getElementById("happyMusic");
 
+let noClickedOnce = false;
+let canMoveNo = true;
+
 // ---------- NO ----------
 function sayNo() {
+  noClickedOnce = true;
+  canMoveNo = false;
+
   happyMusic.pause();
   happyMusic.currentTime = 0;
   sadMusic.play();
@@ -14,13 +21,14 @@ function sayNo() {
   sid.src = "sad-sid.png";
   sid.classList.remove("hidden");
 
-  message.innerText = "You don’t love me!? 💔";
+  message.innerText = "Bad poogu! You don’t love me!? 💔";
 
   buttons.style.display = "none";
 
+  // show buttons again after 15 seconds
   setTimeout(() => {
     buttons.style.display = "block";
-  }, 3000);
+  }, 15000);
 }
 
 // ---------- YES ----------
@@ -32,17 +40,20 @@ function sayYes() {
   sid.src = "happy-sid.png";
   sid.classList.remove("hidden");
 
-  message.innerText = "YAY!! I knew it 💘🥹";
+  message.innerText = "YAY!! I knew it 💘";
   buttons.style.display = "none";
 
   startConfetti();
 }
 
-// ---------- RUNAWAY BUTTON ----------
+// ---------- RUNAWAY BUTTON (ONLY FIRST TIME, SLOW) ----------
 function runAway() {
-  const noBtn = document.getElementById("noBtn");
-  const x = Math.random() * 200 - 100;
-  const y = Math.random() * 200 - 100;
+  if (!canMoveNo || noClickedOnce) return;
+
+  const x = Math.random() * 120 - 60;
+  const y = Math.random() * 120 - 60;
+
+  noBtn.style.transition = "transform 0.6s ease";
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
