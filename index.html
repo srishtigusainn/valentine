@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💘</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- floating hearts -->
+  <div class="hearts"></div>
+
+  <!-- confetti -->
+  <canvas id="confetti"></canvas>
+
+  <div class="container">
+    <h1 id="question">Will you be my Valentine? 💖</h1>
+
+    <img id="sid" class="hidden">
+
+    <p id="message"></p>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="sayYes()">Yes 💘</button>
+      <button id="noBtn" onmouseover="runAway()" onclick="sayNo()">
+        No (choose no 😒)
+      </button>
+    </div>
+  </div>
+
+  <!-- music -->
+  <audio id="sadMusic" src="hangover.mp3"></audio>
+  <audio id="happyMusic" src="zaalima.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

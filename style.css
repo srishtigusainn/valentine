@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  background: linear-gradient(#ffdde1, #ee9ca7);
+  font-family: 'Comic Sans MS', cursive;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  z-index: 2;
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #e63950;
+}
+
+img {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+#noBtn {
+  position: relative;
+}
+
+/* Floating hearts */
+.hearts::before {
+  content: "💖 💘 💕 💗 💓";
+  position: fixed;
+  width: 100%;
+  font-size: 24px;
+  top: 100%;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from { top: 100%; }
+  to { top: -10%; }
+}
+
+/* Confetti canvas */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
