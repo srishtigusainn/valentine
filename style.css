@@ -46,23 +46,9 @@ img {
   display: none;
 }
 
+/* Needed for movement control */
 #noBtn {
   position: relative;
-}
-
-/* Floating hearts */
-.hearts::before {
-  content: "💖 💘 💕 💗 💓";
-  position: fixed;
-  width: 100%;
-  font-size: 24px;
-  top: 100%;
-  animation: float 6s linear infinite;
-}
-
-@keyframes float {
-  from { top: 100%; }
-  to { top: -10%; }
 }
 
 /* Confetti canvas */
@@ -75,3 +61,4 @@ img {
   pointer-events: none;
   z-index: 1;
 }
+
